@@ -1,0 +1,456 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f8fa;
+    color: #1a73e8;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+
+/* Hiding header on scroll down */
+.hidden-header {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Animation effect on links */
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.8px;
+}
+
+/* Navigation Styling */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Base link styling in the header */
+/* Base styling without underline */
+header nav a {
+    color: #1a73e8;
+    text-decoration: none; /* Remove default underline */
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Add the underline effect on hover */
+header nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position the underline just below the text */
+    width: 0; /* Initially hidden */
+    height: 2px; /* Thickness of the underline */
+    background: #1a73e8; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* On hover, expand the underline */
+header nav a:hover::after {
+    width: 100%; /* Full width when hovered */
+    left: 0; /* Align with the start of the text */
+}
+
+
+/* Remove underline on all other states (optional for specificity) */
+header nav a:visited,
+header nav a:active {
+    text-decoration: none;
+}
+
+
+header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+
+
+    .cohort-info{
+        color:black;
+        font-weight:bold;
+        margin-left: 10px;
+    }
+}
+
+.apply-button {
+    display: inline-block; /* Ensures it behaves like a button */
+    margin-left: auto; /* Pushes the button to the right */
+    color: #1a73e8;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #1a73e8;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Add border transition */
+    cursor: pointer; /* Show pointer on hover */
+    font-size: 15px;
+}
+
+.apply-button:hover {
+    background-color: #1a73e8;
+    color: #fff;
+    border-color: transparent; /* Change border color to transparent on hover */
+}
+
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; /* Limits hero section width */
+    margin: 20px auto; /* Reduced margin to give less space above and below */
+    padding: 100px 80px; /* Adjusted top and bottom padding for more height */
+    background-image: linear-gradient(135deg, #1a73e8 0%, #1a73e8 100%);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+    animation: fadeIn 1s ease-in;
+}
+
+/* Text Content Styling */
+.hero-content {
+    max-width: 60%; /* Adjusts the width of text content */
+    text-align: center; /* Center aligns all text within hero-content */
+}
+
+.hero-content h2 {
+    font-size: 3rem; /* Font size for main heading */
+    margin-bottom: 1rem; /* Space below the heading */
+    color: #fff; /* White color for text */
+}
+
+.hero-line {
+    display: block; /* Makes each line occupy a full line */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+
+/* Adjust hero-text for vertical stacking and centering */
+.hero-text {
+    text-align: center; /* Center align for the text container */
+    margin-top: 1rem; /* Space above the hero-text div */
+    font-weight: bold;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+}
+
+/* Button Styling */
+.hero-text button {
+    margin: 10px 0; /* Adds vertical spacing between buttons */
+    padding: 12px 24px; /* Consistent button padding */
+    background-color: #ffe100; /* Button background color */
+    color: #1a73e8; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size for button text */
+    font-weight: bold; /* Bold button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effect */
+}
+
+/* Hover effect for the button */
+.hero-text button:hover {
+    background-color: #ffd700; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+}
+
+
+.hero-text p {
+    font-size:1.5rem; /* Font size for paragraph text */
+    margin: 0.5rem 0; /* Space between paragraphs */
+}
+
+/* Button Styling */
+.hero-content button {
+    background-color: #ffe100; /* Button background color */
+    color: #1a73e8; /* Button text color */
+    padding: 12px 24px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size for button text */
+    font-weight: bold; /* Bold button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effect for background color and scale */
+    margin-top: 1rem; /* Space above the button */
+}
+
+/* Hover effect for the button */
+.hero-content button:hover {
+    background-color: #ffd700; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+}
+
+
+/* Image Styling */
+.hero-image {
+    max-width: 55%; /* Adjust as needed for the image size */
+}
+
+.hero-image img {
+    width: 100%; /* Full width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Adds rounded corners to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #66a6ff;
+    margin: 8px auto 0;
+}
+
+/* Courses Section */
+#courses {
+    padding: 25px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Styles for h2 title */
+#courses h2 {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+/* Main course title styling */
+.course-title h3 {
+    font-size: 2rem; 
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Content area for h4 elements arranged in columns */
+.course-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    gap: 20px; /* Space between cards */
+    max-width: 1100px;
+    margin: 0 auto; /* Center-align the grid */
+}
+
+/* Individual course card styling */
+.course-card {
+    padding: 15px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #1a73e8; /* Light background color for cards */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+/* Hover effect */
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Sub-course title styling */
+.course-card h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Course Price Styling */
+.course-price {
+    background-color: #1a73e8; /* Background color */
+    padding: 20px; /* Space around the text */
+    border-radius: 8px; /* Rounded corners */
+    margin: 0 auto 30px; /* Center align with auto margin on left and right */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center; /* Center align the text */
+    max-width: 600px; /* Set max width */
+}
+
+.course-price h4 {
+    font-size: 1.8rem; /* Larger font for emphasis */
+    color: #fff; /* Course title color */
+}
+
+.course-price span {
+    font-weight: bold; /* Bold font for the price */
+    font-size: 2rem; /* Larger font size for the price */
+    color: #fff; /* Distinct color for the price */
+}
+
+
+
+/* About Us Section */
+#about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 20px auto; /* Reduced margin to give less space above and below */
+    padding: 60px 40px; /* Adjusted top and bottom padding for more height */
+    background-color: #1a73e8; /* Light blue background for contrast */
+    color: #fff;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Subtle shadow */
+    text-align: center; /* Center all text */
+}
+
+.about-content {
+    max-width: 1400px; /* Constrain width for readability */
+    font-weight: bold;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    color: #fff; /* Use primary color */
+    margin-bottom: 20px;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#about-us button {
+    background-color: #ffe100; /* Primary color for button */
+    color: #1a73e8;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+#about-us button:hover {
+    background-color: #ffe100;
+    transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+
+
+/* Contact Section Styling */
+#contact {
+    padding: 20px 20px 80px; /* Adjust bottom padding as needed */
+    background-color: #f5f8fa;
+    color: #1a73e8;
+    text-align: center;
+}
+
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px; /* Add spacing below */
+}
+
+#contact p a {
+    text-decoration: none;
+    color: #1a73e8; /* Customize color as needed */
+    font-weight: bold;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img {
+    width: 40px; /* Set icon size */
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15); /* Scale icons slightly */
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+
+.social-icons img:hover {
+    opacity: 1; /* Add a hover effect */
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial hidden state */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animated state */
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s forwards;
+}
