@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (bookCallButton) {
         bookCallButton.addEventListener('click', function () {
             window.open('https://calendly.com/sriakhil2000/30min', '_blank');
-        });
-    }
+    });
+}
+
 });
 
 function smoothScroll(target) {
