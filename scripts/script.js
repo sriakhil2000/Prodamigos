@@ -41,18 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listener for the hero section enroll button
     const enrollButton = document.querySelector('.hero-text .enroll-button');
-    enrollButton.addEventListener('click', function () {
-        // Redirect to the same link
-        window.open('https://forms.gle/Zk1HBVyx4YByy3Ue6', '_blank');
-    });
-});
+    if (enrollButton) {
+        enrollButton.addEventListener('click', function () {
+            window.open('https://forms.gle/Zk1HBVyx4YByy3Ue6', '_blank');
+        });
+    }
 
-const enrollButton = document.querySelector('.hero-text .enroll-button');
-if (enrollButton) {
-    enrollButton.addEventListener('click', function () {
-        window.open('https://forms.gle/Zk1HBVyx4YByy3Ue6', '_blank');
-    });
-}
+    // Event listener for the "Book a Free Call" button
+    const bookCallButton = document.querySelector('.book-call-button');
+    if (bookCallButton) {
+        bookCallButton.addEventListener('click', function () {
+            window.open('https://calendly.com/sriakhil2000/30min', '_blank');
+        });
+    }
+});
 
 function smoothScroll(target) {
     const start = window.scrollY;
@@ -87,7 +89,6 @@ document.querySelectorAll('a').forEach(anchor => {
         smoothScroll(target);
     });
 });
-
 
 document.getElementById('explore-course-btn').addEventListener('click', function(e) {
     e.preventDefault();
